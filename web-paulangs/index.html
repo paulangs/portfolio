@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Paula Carrillo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="input.css">
+
+<script>
+  tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primario: '#065750', 
+                secundario: '#f43f5e',
+                oscuro: '#0a0a0a',
+                oscuroSuave: '#0a1a19',
+                crema:'#fffbee',
+                esmeraldaProfundo: '#032724',
+                primarioOscurito:'#053832',
+                naranjoso:'#dc641e'
+            },
+            fontFamily: {
+                titulo: ['"Playfair Display"', 'serif'],
+                sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            },
+            // 👇 AQUÍ AGREGAMOS TU FLOTACIÓN OFICIAL AL MOTOR DE TAILWIND
+            animation: {
+                marquee: 'marquee 25s linear infinite',
+                flotar: 'flotar 1.5s ease-in-out infinite',
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                },
+                // 👇 TUS FOTOGRAMAS EXACTOS
+                flotar: {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(9px)' },
+                }
+            }
+        }
+    }
+}
+</script>
+
+<style>
+.grainy-bg {
+  position: relative;
+  z-index: 10; 
+  background-color: #032724; 
+  background-image: 
+    radial-gradient(at 85% 35%, #dc641ecc 0px, transparent 50%),
+    radial-gradient(at 95% 60%, #be320fb3 0px, transparent 45%),
+    radial-gradient(at 30% 40%, #065750 0px, transparent 60%);
+}
+
+.grainy-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: url(#noiseFilter);
+  opacity: 0.28; 
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2; 
+}
+
+.projects-mesh {
+  position: relative;
+  z-index: 1; 
+  overflow: hidden; 
+  background-color: #032724; 
+  background-image: 
+    radial-gradient(at 80% 38%, #065750 0px, transparent 40%),
+    radial-gradient(at 10% 45%, #065750 0px, transparent 40%),
+    radial-gradient(at 30% 50%, #dc641e 0px, transparent 35%); 
+}
+
+.projects-mesh::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: url(#noiseFilter);
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grainy-fade-divider {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  height: 150px; 
+  background-color: transparent;
+  z-index: 5; 
+  pointer-events: none;
+}
+
+.grainy-fade-divider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  filter: url(#noiseFilter);
+  opacity: 0.25; 
+  mix-blend-mode: overlay;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+</style>
+
+</head>
+<body class="bg-esmeraldaProfundo font-sans overflow-x-hidden w-full">
+
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hidden">
+      <filter id="noiseFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.45" numOctaves="3" stitchTiles="stitch"/>
+      </filter>
+    </svg>
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 md:px-10 py-6 md:py-8 flex flex-col sm:flex-row justify-between items-center gap-4 bg-esmeraldaProfundo/80 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-colors duration-500 ease-in-out">
+        <a href="#" class="group flex flex-col items-center sm:items-start">
+            <span id="nav-logo" class="font-titulo text-2xl md:text-[37px] font-normal text-crema leading-none text-center sm:text-left transition-colors duration-500 ease-in-out">
+                paulangs
+            </span>
+            <span class="text-[8px] md:text-[9px] tracking-[0.4em] text-crema/40 font-normal uppercase mt-1 md:mt-2 text-center sm:text-left transition-colors">
+                Visual Designer
+            </span>
+        </a>
+
+        <div class="flex gap-6 md:gap-8 text-[9px] md:text-[10px] tracking-[0.3em] font-medium uppercase text-crema/50">
+            <a href="#proyectos" class="hover:text-crema transition-colors">Portafolio</a>
+            <a href="#sobre-mi" class="hover:text-crema transition-colors">Sobre mí</a>
+            <a href="#contacto" class="hover:text-crema transition-colors">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden grainy-bg pt-24 sm:pt-0">
+        
+        <div class="absolute top-[20%] right-[-5%] w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] rounded-full bg-[#ffcd38]/15 blur-[80px] sm:blur-[100px] z-0 pointer-events-none"></div>
+        
+<div class="relative z-30 w-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center min-h-screen py-12 pt-16 sm:pt-12">
+    <div class="relative w-full flex flex-col items-center justify-center">
+                
+                <div class="absolute left-6 md:left-20 lg:left-28 top-[20%] lg:top-[30%] -translate-y-1/2 hidden md:flex flex-col gap-4 z-30 pointer-events-none">
+                    <span class="text-[9px] tracking-[0.4em] font-mono font-bold text-naranjoso uppercase">CORE_FOCUS</span>
+                    <div class="flex flex-col gap-2 font-mono text-[10px] tracking-wider text-crema/90 uppercase">
+                        <span>Diseño UI</span>
+                        <span>Diseño Editorial</span>
+                        <span>Data Viz</span>
+                    </div>
+                </div>
+
+                <div class="absolute right-6 md:right-12 top-[40%] lg:top-[50%] -translate-y-1/2 hidden md:flex flex-col gap-6 z-30 border-l border-white/10 pl-4 pointer-events-none">
+                    <div class="space-y-1">
+                        <span class="text-[9px] tracking-[0.3em] font-mono text-white/60 uppercase block">ORIGIN</span>
+                        <h4 class="text-[11px] font-mono text-crema/90 uppercase">CDMX, México</h4>
+                    </div>
+                </div>
+                
+<!-- 1. El Retrato Central (Subido a -mt-16 en móvil) -->
+        <div class="w-full max-w-[80vw] sm:max-w-[280px] lg:max-w-[440px] aspect-[3/4] overflow-hidden relative z-10 -mt-16 sm:mt-0">
+            <img src="img/foto-fake.png" 
+                 class="w-full h-full object-cover object-center opacity-90 mix-blend-normal" 
+                 alt="Paula Carrillo">
+        </div>
+
+<!-- 2. El Título Masivo en Primer Plano (Crecido en versión mobile) -->
+<div class="absolute inset-x-0 bottom-[18%] sm:bottom-[15%] lg:bottom-[11%] text-center z-20 pointer-events-none px-4">
+    <h1 class="font-titulo text-4xl sm:text-6xl md:text-7xl lg:text-[85px] text-crema font-medium leading-[1.1] sm:leading-[1.05] tracking-tight drop-shadow-[0_10px_20px_rgba(0,0,0,0.7)]">
+        Paula Carrillo <br class="hidden sm:inline">
+        <span class="italic font-normal text-crema/90 text-3xl sm:text-5xl md:text-6xl lg:text-[75px] block mt-2">Visual & UI Portfolio</span>
+    </h1>
+</div>
+
+<!-- 3. Botón Píldora Inferior (Usando la nueva clase oficial del motor de Tailwind) -->
+<div class="relative z-30 mt-10 sm:mt-12 pointer-events-auto text-center">
+    <a href="#proyectos" class="animate-flotar inline-block p-3 sm:p-3 rounded-full bg-white/5 backdrop-blur-md border border-white/20 hover:bg-white/20 shadow-xl">
+        <img src="img/arrow-down.png" alt="Scroll Down" class="h-2 block" />
+    </a>
+</div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-20 w-full mx-auto bg-esmeraldaProfundo projects-mesh overflow-hidden" id="proyectos">
+        <div class="max-w-full mx-auto relative z-20 px-6 md:px-10">
+            
+            <div class="mb-16 md:mb-24 relative z-30 text-center">
+                <span class="text-[11px] md:text-[12px] tracking-[0.6em] font-bold text-naranjoso uppercase block mb-4">Selected Work</span>
+            </div>
+
+            <div class="space-y-20 md:space-y-32">
+
+                <div class="space-y-6">
+                    <div class="flex flex-col items-center text-center gap-4 border-b border-white/5 pb-6">
+                        <h3 class="font-titulo text-2xl md:text-3xl text-crema font-normal leading-none">
+                            Data Visualization
+                        </h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#bf5af2]"></span> Infographics
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#30d158]"></span> Charts & Dashboards
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full flex overflow-x-hidden group">
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/data-3.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[14/8] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/data-1.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[15/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/data-4.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/data-3.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[14/8] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/data-1.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[15/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/data-4.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex flex-col items-center text-center gap-4 border-b border-white/5 pb-6">
+                        <h3 class="font-titulo text-2xl md:text-3xl text-crema font-normal leading-none">
+                            Digital Assets
+                        </h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#ff453a]"></span> Podcast Assets 
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#ffcc00]"></span> Social Media
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full flex overflow-x-hidden group">
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/podcast-1.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/social-2.gif" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/social-3.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[7/5] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/podcast-2.gif" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/social-4.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/podcast-1.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/social-2.gif" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/social-3.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[7/5] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/podcast-2.gif" class="w-full h-full object-cover" alt="">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/social-4.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex flex-col items-center text-center gap-4 border-b border-white/5 pb-6">
+                        <h3 class="font-titulo text-2xl md:text-3xl text-crema font-normal leading-none">
+                            Out of Home (OOH)
+                        </h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#0a84ff]"></span> Gran Formato
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#ff9500]"></span> Urban Campaigns
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full flex overflow-x-hidden group">
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/ooh1.jpg" class="w-full h-full object-cover" alt="OOH 1">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/ooh2.jpg" class="w-full h-full object-cover" alt="OOH 2">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/ooh3.jpg" class="w-full h-full object-cover" alt="OOH 3">
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/ooh1.jpg" class="w-full h-full object-cover" alt="OOH 1">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/ooh2.jpg" class="w-full h-full object-cover" alt="OOH 2">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/ooh3.jpg" class="w-full h-full object-cover" alt="OOH 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex flex-col items-center text-center gap-4 border-b border-white/5 pb-6">
+                        <h3 class="font-titulo text-2xl md:text-3xl text-crema font-normal leading-none">
+                            Landing Pages & UI
+                        </h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#5e5ce6]"></span> Maquetación UI
+                            </span>
+                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#00e5ff]"></span> Figma Prototypes
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full flex overflow-x-hidden group">
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/web4.gif" class="w-full h-full object-cover" alt="Landing 1">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <a href="https://expansion.mx/empresas/2025/06/26/las-500-empresas-contra-la-corrupcion-2025-expansion" target="_blank">
+                                    <img src="img/web1.jpg" class="w-full h-full object-cover" alt="Landing 1">
+                                </a>
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <a href="https://expansion.mx/economia/2025/01/14/los-nuevos-planes-de-citi-y-banamex" target="_blank">    
+                                    <img src="img/web2.jpg" class="w-full h-full object-cover" alt="Landing 2">
+                                </a>
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <a href="https://obras.expansion.mx/inmobiliario/2024/12/03/mercado-inmobiliario-en-mexico-2024-un-mosaico-de-oportunidades" target="_blank">    
+                                    <img src="img/web3.jpg" class="w-full h-full object-cover" alt="Landing 3">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <img src="img/web4.gif" class="w-full h-full object-cover" alt="Landing 1">
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <a href="https://expansion.mx/empresas/2025/06/26/las-500-empresas-contra-la-corrupcion-2025-expansion" target="_blank">
+                                    <img src="img/web1.jpg" class="w-full h-full object-cover" alt="Landing 1">
+                                </a>
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <a href="https://expansion.mx/economia/2025/01/14/los-nuevos-planes-de-citi-y-banamex" target="_blank">    
+                                    <img src="img/web2.jpg" class="w-full h-full object-cover" alt="Landing 2">
+                                </a>
+                            </div>
+                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
+                                <a href="https://obras.expansion.mx/inmobiliario/2024/12/03/mercado-inmobiliario-en-mexico-2024-un-mosaico-de-oportunidades" target="_blank">    
+                                    <img src="img/web3.jpg" class="w-full h-full object-cover" alt="Landing 3">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <section id="sobre-mi" class="relative z-10 w-full flex flex-col items-center justify-center overflow-hidden bg-primario pt-16 md:pt-24 pb-16 md:pb-24"
+             style="background-image: 
+                radial-gradient(at 15% 35%, #dc641e73 0px, transparent 50%),
+                radial-gradient(at 85% 50%, #34d39940 0px, transparent 45%),
+                radial-gradient(at 90% 85%, #dc641e59 0px, transparent 45%),
+                radial-gradient(at 10% 15%, #dc641e40 0px, transparent 40%);">
+
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="shape-destello top-[7%] left-[25%] w-5 h-5 opacity-40 animate-pulse [animation-duration:5s]"></div>
+            <div class="shape-destello top-[10%] right-[5%] w-5 h-5 opacity-40 animate-pulse [animation-duration:5s]"></div>
+            <div class="shape-destello top-[45%] right-[15%] w-5 h-5 opacity-30 animate-pulse [animation-duration:7s]"></div>
+            <div class="shape-destello bottom-[25%] left-[12%] w-6 h-6 opacity-30 animate-pulse [animation-delay:2s] [animation-duration:6s]"></div>
+            <div class="shape-destello top-[30%] left-[8%] w-5 h-5 opacity-40 animate-pulse [animation-delay:1s] [animation-duration:4s]"></div>
+            <div class="shape-destello bottom-[15%] right-[8%] w-4 h-4 opacity-20 animate-pulse [animation-delay:3s]"></div>
+        </div>
+
+        <div class="relative z-30 max-w-6xl w-full mx-auto px-6 md:px-10 flex flex-col justify-center pt-12 pb-16">
+            <div class="flex items-baseline gap-6 mb-8 justify-center md:justify-start">
+                <h2 class="font-titulo text-4xl text-crema italic">Sobre mí</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-b border-white/10 pb-10">
+                
+                <div class="space-y-3 border-l border-white/10 pl-4 md:border-l-0 md:pl-0">
+                    <h4 class="text-[9px] tracking-[0.4em] font-mono text-naranjoso uppercase font-bold">FORMACIÓN</h4>
+                    <p class="text-[11px] sm:text-xs text-crema/90 font-light leading-relaxed tracking-wide">
+                        Lic. en Diseño y Comunicación Visual,<br>Diseño Editorial y Medios Digitales.<br>UNAM
+                    </p>
+                </div>
+
+                <div class="space-y-3 border-l border-white/10 pl-4">
+                    <h4 class="text-[9px] tracking-[0.4em] font-mono text-naranjoso uppercase font-bold">UBICACIÓN</h4>
+                    <p class="text-[11px] sm:text-xs text-crema/90 font-light leading-relaxed tracking-wide">
+                        Ciudad de México <br>
+                        <span class="text-crema/90">Disponible en modalidad híbrida o remota<br>Proyectos Globales y locales</span>
+                    </p>
+                </div>
+
+                <div class="space-y-3 border-l border-white/10 pl-4">
+                    <h4 class="text-[9px] tracking-[0.4em] font-mono text-naranjoso uppercase font-bold">IDIOMAS</h4>
+                    <p class="text-[11px] sm:text-xs text-crema/90 font-light tracking-wide leading-relaxed">
+                        Español nativo <br>
+                        Inglés B2 (avanzado)
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 flex justify-center w-full px-4 sm:px-0">
+                <a href="src/PaulaCarrillo-Resume-2026.pdf" download target="_blank"
+                   class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-naranjoso backdrop-blur-sm border border-white/10 text-crema text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-crema hover:text-black transition-all duration-500 shadow-xl w-full sm:w-auto text-center">
+                    DESCARGAR CV
+                </a>
+            </div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-6xl px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-6 mb-12">
+            
+            <div class="lg:col-span-7 space-y-12 md:space-y-16">
+                <div class="flex items-baseline gap-6 mb-4 justify-center md:justify-start">
+                    <h2 class="font-titulo text-3xl md:text-4xl text-crema italic">Experiencia & <span class="not-italic text-naranjoso">Skills</span></h2>
+                </div>
+                
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute left-0 top-2 w-[1px] h-full bg-crema/10 group-hover:bg-naranjoso/40 transition-colors"></div>
+                    <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-naranjoso ring-4 ring-primarioOscurito"></div>
+                    
+                    <span class="font-mono text-[10px] text-crema/40 uppercase tracking-widest">2021 — 2026</span>
+                    <h3 class="font-titulo text-xl md:text-2xl text-crema mt-2 italic">Grupo Expansión | Grupo Editorial</h3>
+                    <p class="mt-4 text-xs md:text-sm text-crema/70 leading-relaxed max-w-xl font-light">
+                        Diseño Web, medios digitales e impresos. Desarrollo de sistemas visuales para plataformas digitales, experiencias editoriales y campaigns de marca.
+                    </p>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute left-0 top-2 w-[1px] h-full bg-crema/10 group-hover:bg-naranjoso/40 transition-colors"></div>
+                    <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-naranjoso ring-4 ring-primarioOscurito"></div>
+                    
+                    <span class="font-mono text-[10px] text-crema/40 uppercase tracking-widest">2020 — 2021</span>
+                    <h3 class="font-titulo text-xl md:text-2xl text-crema mt-2 italic">Proyectos Freelance</h3>
+                    
+                    <ul class="mt-4 text-xs text-crema/60 space-y-3 font-light max-w-md list-none tracking-wide">
+                        <li>
+                            <strong class="text-crema/80 font-medium">RO & Asociados | Despacho Legal</strong> ➔ UI Web Design
+                        </li>
+                        <li>
+                            <strong class="text-crema/80 font-medium">Golden Riders | Equipo Volleyball</strong> ➔ Identidad Gráfica
+                        </li>
+                        <li>
+                            <strong class="text-crema/80 font-medium">Sayra Díaz | Nutrióloga</strong> ➔ Identidad Gráfica y Editorial
+                        </li>
+                        <li>
+                            <strong class="text-crema/80 font-medium">Reto 25 días | Entrenamiento Virtual</strong> ➔ Contenido Digital
+                        </li>
+                        <li>
+                            <strong class="text-crema/80 font-medium">Ardana Diesel</strong> ➔ Branding Corporativo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="bg-white/5 rounded-[2rem] p-6 md:p-12 border border-white/10 lg:sticky lg:top-32 backdrop-blur-md shadow-2xl">
+                    <div class="text-center mb-8 md:mb-12">
+                        <h4 class="font-titulo text-2xl text-crema italic">Core Skills</h4>
+                        <div class="w-8 h-[1px] bg-crema/20 mx-auto mt-4"></div>
+                    </div>
+                    
+                    <div class="space-y-8 md:space-y-12">
+                        <div>
+                            <span class="text-[9px] tracking-[0.4em] font-bold uppercase text-naranjoso block mb-3">Conocimientos</span>
+                            <p class="text-xs md:text-sm text-crema font-light leading-relaxed">
+                                Social Media Content, Maquetación UI, Data Visualization, Diseño Editorial y Branding.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="text-[9px] tracking-[0.4em] font-bold uppercase text-naranjoso block mb-4">Software Stack</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-crema/70">Adobe Suite</span>
+                                <span class="text-[10px] px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-crema/70">Tailwind CSS</span>
+                                <span class="text-[10px] px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-crema/70">Bootstrap CSS</span>
+                                <span class="text-[10px] px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-crema/70">Notion</span>
+                                <span class="text-[10px] px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-crema/70">Figma</span>
+                                <span class="text-[10px] px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-crema/70">Infogram</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 md:mt-12 pt-6 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[8px] font-mono text-crema/30 uppercase tracking-widest italic">Ready for deployment</span>
+                        <div class="flex gap-1">
+                            <div class="w-1 h-1 rounded-full bg-naranjoso/20"></div>
+                            <div class="w-1 h-1 rounded-full bg-naranjoso/40"></div>
+                            <div class="w-1 h-1 rounded-full bg-naranjoso/60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-oscuroSuave text-white py-12 md:py-16 px-6" id="contacto">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10">
+            
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-titulo font-bold">¡Trabajemos juntos!</h2>
+                <p class="text-gray-400 mt-2 text-base md:text-lg">Estoy disponible para nuevos proyectos</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end gap-6 w-full md:w-auto">
+                <a href="mailto:paulangsdesign@gmail.com" class="bg-primario hover:bg-opacity-90 px-8 py-4 rounded-full font-bold transition-all shadow-lg text-center w-full md:w-auto">
+                    Enviar un mensaje
+                </a>
+                
+                <div class="flex gap-4 text-gray-400">
+                    <a href="https://linkedin.com/in/paulangs" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 w-8 h-8">
+                        <img src="img/linkedin.png" class="w-full h-full object-contain" alt="LinkedIn">
+                    </a>
+
+                    <a href="https://behance.net/paulangs" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 w-8 h-8">
+                        <img src="img/behance.png" class="w-full h-full object-contain" alt="Behance">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-center text-xs md:text-sm text-gray-500">
+            <p>Diseñado por Paula Carrillo © 2026 — Paulangs Studio</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

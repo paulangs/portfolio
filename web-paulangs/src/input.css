@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   ANIMACIONES CLÁSICAS (Fuera del motor de Tailwind para evitar bloqueos)
+   ========================================================================== */
+
+/* ⚡ EN JALÓN DEFINITIVO PARA LA FLOTACIÓN DE LA FLECHA */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+  100% { transform: translateY(0px); }
+}
+
+.animar-flotar {
+  animation: float 1.5s ease-in-out infinite !important;
+  display: inline-block;
+}
+
+.animar-flotar-lento {
+  animation: float 9s ease-in-out infinite !important;
+  display: inline-block;
+}
+
+/* El resto de tus utilidades se quedan en la capa correspondiente */
+@layer utilities {
+  .shape-destello {
+    position: absolute;
+    background-color: #fffbee; 
+    clip-path: polygon(
+      50% 0%, 53% 47%, 100% 50%, 53% 53%, 
+      50% 100%, 47% 53%, 0% 50%, 47% 47%
+    );
+    filter: drop-shadow(0 0 4px rgba(6, 87, 80, 0.15));
+    z-index: 1;
+  }
+  
+  .clean-scrollbar::-webkit-scrollbar { display: none; }
+  .clean-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
