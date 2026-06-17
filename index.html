@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Paula Carrillo</title>
+    <title>Paula Carrillo | Data Storytelling &amp; Digital Experiences</title>
+    <meta name="description" content="Portafolio de Paula Carrillo, disenadora digital especializada en data storytelling, visualizacion de informacion, experiencias editoriales y sistemas visuales para medios digitales.">
+    <meta name="author" content="Paula Carrillo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#032724">
+    <link rel="canonical" href="https://paulangs.vercel.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paulangs.vercel.app/">
+    <meta property="og:title" content="Paula Carrillo | Data Storytelling &amp; Digital Experiences">
+    <meta property="og:description" content="Experiencias editoriales digitales, visualizacion de informacion y sistemas visuales para medios y marcas.">
+    <meta property="og:image" content="https://paulangs.vercel.app/img/web1.jpg">
+    <meta property="og:locale" content="es_MX">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paula Carrillo | Data Storytelling &amp; Digital Experiences">
+    <meta name="twitter:description" content="Portafolio de diseno digital, data storytelling y experiencias editoriales.">
+    <meta name="twitter:image" content="https://paulangs.vercel.app/img/web1.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -31,7 +48,6 @@
                 titulo: ['"Playfair Display"', 'serif'],
                 sans: ['Inter', 'ui-sans-serif', 'system-ui'],
             },
-            // 👇 AQUÍ AGREGAMOS TU FLOTACIÓN OFICIAL AL MOTOR DE TAILWIND
             animation: {
                 marquee: 'marquee 25s linear infinite',
                 flotar: 'flotar 1.5s ease-in-out infinite',
@@ -41,7 +57,6 @@
                     '0%': { transform: 'translateX(0%)' },
                     '100%': { transform: 'translateX(-100%)' },
                 },
-                // 👇 TUS FOTOGRAMAS EXACTOS
                 flotar: {
                     '0%, 100%': { transform: 'translateY(0px)' },
                     '50%': { transform: 'translateY(9px)' },
@@ -53,6 +68,30 @@
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  background: #fffbee;
+  color: #032724;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .grainy-bg {
   position: relative;
   z-index: 10; 
@@ -123,8 +162,38 @@
 }
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Paula Carrillo",
+  "alternateName": "paulangs",
+  "jobTitle": "Digital Designer",
+  "url": "https://paulangs.vercel.app/",
+  "email": "mailto:paulangsdesign@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de Mexico",
+    "addressCountry": "MX"
+  },
+  "knowsAbout": [
+    "Data Storytelling",
+    "Visualizacion de informacion",
+    "Diseno editorial digital",
+    "Experiencias interactivas",
+    "Diseno responsive",
+    "Sistemas visuales"
+  ],
+  "sameAs": [
+    "https://linkedin.com/in/paulangs",
+    "https://behance.net/paulangs"
+  ]
+}
+</script>
+
 </head>
 <body class="bg-esmeraldaProfundo font-sans overflow-x-hidden w-full">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hidden">
       <filter id="noiseFilter">
@@ -132,8 +201,8 @@
       </filter>
     </svg>
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 md:px-10 py-6 md:py-8 flex flex-col sm:flex-row justify-between items-center gap-4 bg-esmeraldaProfundo/80 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-colors duration-500 ease-in-out">
-        <a href="#" class="group flex flex-col items-center sm:items-start">
+    <nav id="navbar" aria-label="Navegacion principal" class="fixed top-0 left-0 w-full z-50 px-6 md:px-10 py-5 md:py-8 flex flex-col sm:flex-row justify-between items-center gap-4 bg-esmeraldaProfundo/90 sm:bg-esmeraldaProfundo/35 backdrop-blur-md transition-colors duration-500 ease-in-out">
+        <a href="#" aria-label="Ir al inicio del portafolio de Paula Carrillo" class="group flex flex-col items-center sm:items-start">
             <span id="nav-logo" class="font-titulo text-2xl md:text-[37px] font-normal text-crema leading-none text-center sm:text-left transition-colors duration-500 ease-in-out">
                 paulangs
             </span>
@@ -142,7 +211,7 @@
             </span>
         </a>
 
-        <div class="flex gap-6 md:gap-8 text-[9px] md:text-[10px] tracking-[0.3em] font-medium uppercase text-crema/50">
+        <div class="flex gap-5 md:gap-8 text-[9px] md:text-[10px] tracking-[0.3em] font-medium uppercase text-crema/60">
             <a href="#proyectos" class="hover:text-crema transition-colors">Portafolio</a>
             <a href="#sobre-mi" class="hover:text-crema transition-colors">Sobre mí</a>
             <a href="#contacto" class="hover:text-crema transition-colors">Contacto</a>
@@ -156,24 +225,30 @@
 <div class="relative z-30 w-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center h-full">
     <div class="relative w-full flex flex-col items-center justify-center">
             
-                
-<!-- 1. El Retrato Central (Subido a -mt-16 en móvil) -->
-<!-- <div class="w-full max-w-[65vw] sm:max-w-[220px] lg:max-w-[320px] aspect-[3/4] overflow-hidden relative z-10">
-            <img src="img/foto-fake.png" 
-                 class="w-full h-full object-cover object-center opacity-90 mix-blend-normal" 
-                 alt="Paula Carrillo">
-        </div> -->
-
-<!-- 2. El Título Masivo en Primer Plano (Crecido en versión mobile) -->
 <div class="relative text-center z-20 px-4">
     <h1 class="font-titulo text-4xl sm:text-6xl md:text-7xl lg:text-[85px] text-crema font-medium leading-[1.1] sm:leading-[1.05] tracking-tight">
         Paula Carrillo <br class="hidden sm:inline">
-        <span class="italic font-light text-crema/90 text-3xl sm:text-5xl md:text-6xl lg:text-[65px] block mt-2">Data Storytelling & Digital Experiences</span>
+        <span class="italic font-light text-crema/90 text-3xl sm:text-5xl md:text-6xl lg:text-[65px] block mt-2">Data Storytelling &amp; Digital Experiences</span>
     </h1>
 <p class="max-w-2xl mx-auto mt-8 text-base md:text-lg text-crema/70 leading-relaxed">
 Diseñadora digital especializada en experiencias editoriales,
 visualización de información y sistemas visuales para medios digitales.
 </p>
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto mt-8 text-left">
+    <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
+        <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Especialidad</span>
+        <p class="mt-2 text-sm text-crema/85 leading-snug">Data storytelling y visualización editorial.</p>
+    </div>
+    <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
+        <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Enfoque</span>
+        <p class="mt-2 text-sm text-crema/85 leading-snug">Experiencias digitales claras, utiles y visualmente memorables.</p>
+    </div>
+    <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
+        <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Base</span>
+        <p class="mt-2 text-sm text-crema/85 leading-snug">Diseño editorial, UI responsive y sistemas visuales.</p>
+    </div>
+</div>
 
 <div class="flex flex-wrap justify-center gap-4 mt-8">
 
@@ -184,6 +259,7 @@ Ver proyectos
 
 <a href="src/PaulaCarrillo-Resume-2026.pdf"
 download
+aria-label="Descargar CV de Paula Carrillo en PDF"
 class="px-6 py-3 rounded-full border border-white/20 text-crema text-xs uppercase tracking-[0.2em]">
 Descargar CV
 </a>
@@ -196,11 +272,16 @@ Descargar CV
         </div>
     </header>
 
-    <main class="py-16 md:py-20 w-full mx-auto bg-esmeraldaProfundo projects-mesh overflow-hidden" id="proyectos">
+    <main class="py-16 md:py-20 w-full mx-auto bg-esmeraldaProfundo projects-mesh overflow-hidden" id="contenido">
+        <span id="proyectos" class="block relative -top-32"></span>
         <div class="max-w-full mx-auto relative z-20 px-6 md:px-10">
             
-            <div class="mb-16 md:mb-24 relative z-30 text-center">
+            <div class="mb-16 md:mb-24 relative z-30 text-center max-w-3xl mx-auto">
                 <span class="text-[11px] md:text-[12px] tracking-[0.6em] font-bold text-naranjoso uppercase block mb-4">Selected Work</span>
+                <h2 class="font-titulo text-3xl md:text-5xl text-crema font-normal">Portafolio editorial y digital</h2>
+                <p class="mt-5 text-sm md:text-base text-crema/65 leading-relaxed">
+                    Selección de piezas enfocadas en explicar información compleja, construir narrativas visuales y disenar productos digitales para audiencias de medios.
+                </p>
             </div>
 
             <div class="space-y-20 md:space-y-32">
@@ -215,32 +296,50 @@ Descargar CV
                                 <span class="w-1.5 h-1.5 rounded-full bg-[#bf5af2]"></span> Infographics
                             </span>
                             <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#30d158]"></span> Charts & Dashboards
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#30d158]"></span> Charts &amp; Dashboards
                             </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-5 md:gap-10 max-w-5xl mx-auto text-left items-start">
+                        <div class="border-l border-naranjoso/50 pl-5">
+                            <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Visualizar para explicar</span>
+                            <p class="mt-3 text-sm md:text-base text-crema/70 leading-relaxed">
+                                Piezas que transforman cifras, procesos y temas densos en lecturas visuales claras. La prioridad es ordenar la información, encontrar la jerarquia narrativa y construir graficas que ayuden a entender rapido sin perder rigor editorial.
+                            </p>
+                        </div>
+                        <div class="lg:border-l lg:border-white/10 lg:pl-6 mb-10">
+                            <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Alcance</span>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Infografias</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Graficas</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Notas visuales</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Datos editoriales</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="relative w-full flex overflow-x-hidden group">
                         <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/data-3.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/data-3.jpg" loading="lazy" class="w-full h-full object-cover" alt="Infografia editorial sobre balance de Pemex presentada en mockup movil">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[14/8] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/data-1.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/data-1.jpg" loading="lazy" class="w-full h-full object-cover" alt="Visual editorial sobre aranceles de Trump y la industria automotriz">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[15/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/data-4.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/data-4.jpg" loading="lazy" class="w-full h-full object-cover" alt="Grafica comparativa sobre tipos de donaciones politicas en Estados Unidos">
                             </div>
                         </div>
                         <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/data-3.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/data-3.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[14/8] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/data-1.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/data-1.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[15/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/data-4.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/data-4.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                         </div>
                     </div>
@@ -261,89 +360,66 @@ Descargar CV
                         </div>
                     </div>
 
+                    <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-5 md:gap-10 max-w-5xl mx-auto text-left items-start">
+                        <div class="border-l border-naranjoso/50 pl-5">
+                            <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Identidad en movimiento</span>
+                            <p class="mt-3 text-sm md:text-base text-crema/70 leading-relaxed">
+                                Recursos visuales pensados para vivir en canales de consumo rapido: portadas, carruseles, rankings y piezas animadas. Cada asset busca mantener una voz reconocible, adaptar la marca al formato y hacer que el contenido sea facil de identificar al desplazarse.
+                            </p>
+                        </div>
+                        <div class="lg:border-l lg:border-white/10 lg:pl-6 mb-10">
+                            <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Formatos</span>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Podcast</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Carruseles</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Animación</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Social media</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="relative w-full flex overflow-x-hidden group">
                         <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/podcast-1.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/podcast-1.jpg" loading="lazy" class="w-full h-full object-cover" alt="Assets visuales para podcast sobre pendientes bancarios en Mexico">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/social-2.gif" class="w-full h-full object-cover" alt="">
+                                <img src="img/social-2.gif" loading="lazy" class="w-full h-full object-cover" alt="Redes sociales con retrato y diseño editorial">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/social-3.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/social-3.jpg" loading="lazy" class="w-full h-full object-cover" alt="Carrusel social de ranking de hospitales para Instagram">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[7/5] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/podcast-2.gif" class="w-full h-full object-cover" alt="">
+                                <img src="img/podcast-2.gif" loading="lazy" class="w-full h-full object-cover" alt="Animación de identidad visual para contenido de podcast">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/social-4.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/social-4.jpg" loading="lazy" class="w-full h-full object-cover" alt="Sistema gráfico aplicado a piezas de social media">
                             </div>
                         </div>
                         <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/podcast-1.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/podcast-1.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/social-2.gif" class="w-full h-full object-cover" alt="">
+                                <img src="img/social-2.gif" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/social-3.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/social-3.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[7/5] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/podcast-2.gif" class="w-full h-full object-cover" alt="">
+                                <img src="img/podcast-2.gif" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/social-4.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="img/social-4.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- <div class="space-y-6">
-                    <div class="flex flex-col items-center text-center gap-4 border-b border-white/5 pb-6">
-                        <h3 class="font-titulo text-2xl md:text-3xl text-crema font-normal leading-none">
-                            Out of Home (OOH)
-                        </h3>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#0a84ff]"></span> Gran Formato
-                            </span>
-                            <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#ff9500]"></span> Urban Campaigns
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="relative w-full flex overflow-x-hidden group">
-                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
-                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/ooh1.jpg" class="w-full h-full object-cover" alt="OOH 1">
-                            </div>
-                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/ooh2.jpg" class="w-full h-full object-cover" alt="OOH 2">
-                            </div>
-                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/ooh3.jpg" class="w-full h-full object-cover" alt="OOH 3">
-                            </div>
-                        </div>
-                        <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
-                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/ooh1.jpg" class="w-full h-full object-cover" alt="OOH 1">
-                            </div>
-                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/ooh2.jpg" class="w-full h-full object-cover" alt="OOH 2">
-                            </div>
-                            <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[10/10] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/ooh3.jpg" class="w-full h-full object-cover" alt="OOH 3">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div class="space-y-6">
                     <div class="flex flex-col items-center text-center gap-4 border-b border-white/5 pb-6">
                         <h3 class="font-titulo text-2xl md:text-3xl text-crema font-normal leading-none">
-                            Landing Pages & UI
+                            Landing Pages &amp; UI
                         </h3>
                         <div class="flex flex-wrap justify-center gap-2">
                             <span class="inline-flex items-center gap-2 text-[10px] md:text-[11px] px-3 py-1 bg-white/5 border border-white/10 rounded-full text-crema/80 font-light">
@@ -355,44 +431,62 @@ Descargar CV
                         </div>
                     </div>
 
+                    <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-5 md:gap-10 max-w-5xl mx-auto text-left items-start">
+                        <div class="border-l border-naranjoso/50 pl-5 mb-10">
+                            <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Historias navegables</span>
+                            <p class="mt-3 text-sm md:text-base text-crema/70 leading-relaxed">
+                                Interfaces editoriales para especiales, reportajes y experiencias de largo aliento. El trabajo combina estructura narrativa, maquetación responsive y componentes visuales que guian la lectura sin quitarle protagonismo al contenido.
+                            </p>
+                        </div>
+                        <div class="lg:border-l lg:border-white/10 lg:pl-6">
+                            <span class="block text-[9px] tracking-[0.35em] uppercase text-naranjoso font-bold">Construcción</span>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">UI editorial</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Prototipos</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Responsive</span>
+                                <span class="text-[10px] px-3 py-1.5 border border-white/10 rounded-full text-crema/70">Landing pages</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="relative w-full flex overflow-x-hidden group">
                         <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/web4.gif" class="w-full h-full object-cover" alt="Landing 1">
+                                <img src="img/web4.gif" loading="lazy" class="w-full h-full object-cover" alt="Prototipo animado de landing page editorial">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <a href="https://expansion.mx/empresas/2025/06/26/las-500-empresas-contra-la-corrupcion-2025-expansion" target="_blank">
-                                    <img src="img/web1.jpg" class="w-full h-full object-cover" alt="Landing 1">
+                                <a href="https://expansion.mx/empresas/2025/06/26/las-500-empresas-contra-la-corrupcion-2025-expansion" target="_blank" rel="noopener noreferrer" aria-label="Ver especial editorial Las 500 empresas contra la corrupcion">
+                                    <img src="img/web1.jpg" loading="lazy" class="w-full h-full object-cover" alt="Landing editorial Las 500 empresas contra la corrupcion">
                                 </a>
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <a href="https://expansion.mx/economia/2025/01/14/los-nuevos-planes-de-citi-y-banamex" target="_blank">    
-                                    <img src="img/web2.jpg" class="w-full h-full object-cover" alt="Landing 2">
+                                <a href="https://expansion.mx/economia/2025/01/14/los-nuevos-planes-de-citi-y-banamex" target="_blank" rel="noopener noreferrer" aria-label="Ver especial editorial sobre Citi y Banamex">    
+                                    <img src="img/web2.jpg" loading="lazy" class="w-full h-full object-cover" alt="Landing editorial sobre los planes de Citi y Banamex">
                                 </a>
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <a href="https://obras.expansion.mx/inmobiliario/2024/12/03/mercado-inmobiliario-en-mexico-2024-un-mosaico-de-oportunidades" target="_blank">    
-                                    <img src="img/web3.jpg" class="w-full h-full object-cover" alt="Landing 3">
+                                <a href="https://obras.expansion.mx/inmobiliario/2024/12/03/mercado-inmobiliario-en-mexico-2024-un-mosaico-de-oportunidades" target="_blank" rel="noopener noreferrer" aria-label="Ver especial editorial Mercado inmobiliario en Mexico">    
+                                    <img src="img/web3.jpg" loading="lazy" class="w-full h-full object-cover" alt="Landing editorial Mercado inmobiliario en Mexico">
                                 </a>
                             </div>
                         </div>
                         <div class="flex gap-4 md:gap-6 pr-4 md:pr-6 shrink-0 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <img src="img/web4.gif" class="w-full h-full object-cover" alt="Landing 1">
+                                <img src="img/web4.gif" loading="lazy" class="w-full h-full object-cover" alt="">
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <a href="https://expansion.mx/empresas/2025/06/26/las-500-empresas-contra-la-corrupcion-2025-expansion" target="_blank">
-                                    <img src="img/web1.jpg" class="w-full h-full object-cover" alt="Landing 1">
+                                <a href="https://expansion.mx/empresas/2025/06/26/las-500-empresas-contra-la-corrupcion-2025-expansion" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Ver especial editorial Las 500 empresas contra la corrupcion">
+                                    <img src="img/web1.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                                 </a>
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <a href="https://expansion.mx/economia/2025/01/14/los-nuevos-planes-de-citi-y-banamex" target="_blank">    
-                                    <img src="img/web2.jpg" class="w-full h-full object-cover" alt="Landing 2">
+                                <a href="https://expansion.mx/economia/2025/01/14/los-nuevos-planes-de-citi-y-banamex" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Ver especial editorial sobre Citi y Banamex">    
+                                    <img src="img/web2.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                                 </a>
                             </div>
                             <div class="h-[220px] sm:h-[350px] md:h-[400px] aspect-[1/1] rounded-xl overflow-hidden border border-white/5 bg-white/5">
-                                <a href="https://obras.expansion.mx/inmobiliario/2024/12/03/mercado-inmobiliario-en-mexico-2024-un-mosaico-de-oportunidades" target="_blank">    
-                                    <img src="img/web3.jpg" class="w-full h-full object-cover" alt="Landing 3">
+                                <a href="https://obras.expansion.mx/inmobiliario/2024/12/03/mercado-inmobiliario-en-mexico-2024-un-mosaico-de-oportunidades" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-label="Ver especial editorial Mercado inmobiliario en Mexico">    
+                                    <img src="img/web3.jpg" loading="lazy" class="w-full h-full object-cover" alt="">
                                 </a>
                             </div>
                         </div>
@@ -423,6 +517,12 @@ Descargar CV
             <div class="flex items-baseline gap-6 mb-8 justify-center md:justify-start">
                 <h2 class="font-titulo text-4xl text-crema italic">Sobre mí</h2>
             </div>
+
+            <div class="max-w-3xl mb-10 text-center md:text-left">
+                <p class="text-base md:text-lg text-crema/75 leading-relaxed">
+                    Combino criterio editorial, pensamiento visual y ejecución digital para transformar información compleja en experiencias claras, responsivas y listas para publicación.
+                </p>
+            </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-b border-white/10 pb-10">
                 
@@ -451,7 +551,7 @@ Descargar CV
             </div>
 
             <div class="mt-12 flex justify-center w-full px-4 sm:px-0">
-                <a href="src/PaulaCarrillo-Resume-2026.pdf" download target="_blank"
+                <a href="src/PaulaCarrillo-Resume-2026.pdf" download target="_blank" rel="noopener noreferrer" aria-label="Descargar CV de Paula Carrillo en PDF"
                    class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-naranjoso backdrop-blur-sm border border-white/10 text-crema text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-crema hover:text-black transition-all duration-500 shadow-xl w-full sm:w-auto text-center">
                     DESCARGAR CV
                 </a>
@@ -462,7 +562,7 @@ Descargar CV
             
             <div class="lg:col-span-7 space-y-12 md:space-y-16">
                 <div class="flex items-baseline gap-6 mb-4 justify-center md:justify-start">
-                    <h2 class="font-titulo text-3xl md:text-4xl text-crema italic">Experiencia & <span class="not-italic text-naranjoso">Skills</span></h2>
+                    <h2 class="font-titulo text-3xl md:text-4xl text-crema italic">Experiencia &amp; <span class="not-italic text-naranjoso">Skills</span></h2>
                 </div>
                 
                 <div class="relative pl-8 md:pl-12 group">
@@ -487,7 +587,7 @@ para algunas de las principales marcas de Grupo Expansión.
                     
                     <ul class="mt-4 text-xs text-crema/60 space-y-3 font-light max-w-md list-none tracking-wide">
                         <li>
-                            <strong class="text-crema/80 font-medium">RO & Asociados | Despacho Legal</strong> ➔ UI Web Design
+                            <strong class="text-crema/80 font-medium">RO &amp; Asociados | Despacho Legal</strong> ➔ UI Web Design
                         </li>
                         <li>
                             <strong class="text-crema/80 font-medium">Golden Riders | Equipo Volleyball</strong> ➔ Identidad Gráfica
@@ -556,19 +656,19 @@ para algunas de las principales marcas de Grupo Expansión.
             </div>
 
             <div class="flex flex-col items-center md:items-end gap-6 w-full md:w-auto">
-                <a href="mailto:paulangsdesign@gmail.com" class="bg-primario hover:bg-opacity-90 px-8 py-4 rounded-full font-bold transition-all shadow-lg text-center w-full md:w-auto">
+                <a href="mailto:paulangsdesign@gmail.com" aria-label="Enviar correo a paulangsdesign@gmail.com" class="bg-primario hover:bg-opacity-90 px-8 py-4 rounded-full font-bold transition-all shadow-lg text-center w-full md:w-auto">
                     Enviar un mensaje
                 </a>
                 
                 <div class="flex gap-4 text-gray-400">
-                    <a href="https://linkedin.com/in/paulangs" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://linkedin.com/in/paulangs" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Paula Carrillo en LinkedIn"
                        class="inline-flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 w-8 h-8">
-                        <img src="img/linkedin.png" class="w-full h-full object-contain" alt="LinkedIn">
+                        <img src="img/linkedin.png" loading="lazy" class="w-full h-full object-contain" alt="">
                     </a>
 
-                    <a href="https://behance.net/paulangs" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://behance.net/paulangs" target="_blank" rel="noopener noreferrer" aria-label="Ver portafolio de Paula Carrillo en Behance"
                        class="inline-flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 w-8 h-8">
-                        <img src="img/behance.png" class="w-full h-full object-contain" alt="Behance">
+                        <img src="img/behance.png" loading="lazy" class="w-full h-full object-contain" alt="">
                     </a>
                 </div>
             </div>
