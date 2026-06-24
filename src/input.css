@@ -39,3 +39,17 @@
   .clean-scrollbar::-webkit-scrollbar { display: none; }
   .clean-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
+
+/* 📐 FRONTERAS TÉCNICAS ESTILO BLUEPRINT */
+.blueprint-border {
+  border: 1px solid rgba(255, 253, 238, 0.12); /* Tu crema con opacidad fina */
+}
+
+/* Efecto hover premium para las celdas del plano */
+.blueprint-cell {
+  transition: background-color 400ms ease, border-color 400ms ease;
+}
+.blueprint-cell:hover {
+  background-color: rgba(255, 253, 238, 0.02);
+  border-color: rgba(220, 100, 30, 0.4); /* Tu naranja de acento al pasar el cursor */
+}
